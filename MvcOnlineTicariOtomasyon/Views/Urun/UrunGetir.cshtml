@@ -1,12 +1,14 @@
 ﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Urun
 @{
-    ViewBag.Title = "YeniUrun";
+    ViewBag.Title = "UrunGetir";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 <br />
-<h2>Yeni Ürün Sayfası</h2>
+<h2>Urun Güncelleme Sayfası</h2>
 <br />
-<form class="form-group" method="post">
+@using (Html.BeginForm("UrunGuncelle","Urun",FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.UrunID)
     @Html.LabelFor(x => x.UrunAd)
     @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
     <br />
@@ -23,7 +25,7 @@
     @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Kategori.KategoriID)
-    @Html.DropDownListFor(x=>x.Kategoriid,(List<SelectListItem>)ViewBag.dgr1,new {@class = "form-control"})
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
     @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
     <br />
     @Html.LabelFor(x => x.UrunGorsel)
@@ -32,5 +34,8 @@
     @Html.LabelFor(x => x.Durum)
     @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
     <br />
-    <button class="btn btn-primary">Kaydet</button>
-</form>
+    <button class="btn btn-primary">Güncelle</button>
+}
+
+
+

@@ -1,6 +1,6 @@
 insert into dbo.Uruns
 (UrunAd,Marka,Stok,AlisFiyat,SatisFiyat,Durum,
-UrunGorsel,Kategori_KategoriID)
+UrunGorsel,Kategoriid)
 values
 ('Buzdolabý','Arçelik',25,18000,21500,1,'test',1),
 ('Çamaþýr Makinesi','Bosch',30,14500,17000,1,'test',1),
