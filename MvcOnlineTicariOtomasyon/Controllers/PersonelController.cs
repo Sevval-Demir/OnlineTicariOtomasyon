@@ -13,7 +13,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var degerler = c.Personels.ToList();
-            return View();
+            return View(degerler);
         }
         [HttpGet]
         public ActionResult PersonelEkle()
