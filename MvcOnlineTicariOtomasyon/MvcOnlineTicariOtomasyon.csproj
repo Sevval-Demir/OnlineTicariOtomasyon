@@ -159,6 +159,7 @@
     <Compile Include="Models\Sınıflar\SinifGrup2.cs" />
     <Compile Include="Models\Sınıflar\SinifGrup3.cs" />
     <Compile Include="Models\Sınıflar\Urun.cs" />
+    <Compile Include="Models\Sınıflar\Yapilacak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2177,9 +2178,13 @@
     <Content Include="Images\boschcamasir.jpg" />
     <Content Include="Images\galaxys24.jpg" />
     <Content Include="Images\iphone15pro.jpg" />
+    <Content Include="Images\man1.jpg" />
+    <Content Include="Images\man2.jpg" />
+    <Content Include="Images\man3.jpg" />
     <Content Include="Images\siemensbuzdolabi.jpg" />
     <Content Include="Images\tefalblender.jpg" />
     <Content Include="Images\vestelfırın.jpg" />
+    <Content Include="Images\woman1.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -2830,6 +2835,7 @@
     <Content Include="Views\Istatistik\Partial2.cshtml" />
     <Content Include="Views\Istatistik\Partial3.cshtml" />
     <Content Include="Views\Istatistik\Partial4.cshtml" />
+    <Content Include="Views\Personel\PersonelListe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
