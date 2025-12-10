@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MvcOnlineTicariOtomasyon.Models.Sınıflar;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MvcOnlineTicariOtomasyon.Models.Sınıflar;
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
     public class PersonelController : Controller
@@ -31,6 +33,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel pers)
         {
+            if(Request.Files.Count>0)
+            {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                pers.PersonelGorsel = "/Image/" + dosyaadi + uzanti;
+            }
             c.Personels.Add(pers);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -50,6 +60,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult PersonelGuncelle(Personel p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.PersonelGorsel = "/Image/" + dosyaadi + uzanti;
+            }
             var perso = c.Personels.Find(p.PersonelID);
             perso.PersonelAd = p.PersonelAd;
             perso.PersonelSoyad = p.PersonelSoyad;
