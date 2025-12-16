@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Index4";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Result Visualization</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript">
+        // 1. Önce kütüphaneyi yükle
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        // 2. Kütüphane tam yüklendiğinde çizim fonksiyonunu çalıştır
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var dataArray = [];
+
+            $.ajax({
+                type: "GET", // Controller'da AllowGet olduğu için GET kullanmak daha garantidir
+                url: '@Url.Action("VisualizeUrunResult", "Grafik")',
+                success: function (result) {
+                    // DataTable oluştur
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Ürün Adı');
+                    data.addColumn('number', 'Stok');
+
+                    // Gelen JSON verisini döngüye al
+                    // ÖNEMLİ: C# tarafındaki property isimleri (urunad, stok) küçük harf ise burada da küçük olmalı
+                    $.each(result, function (i, obj) {
+                        dataArray.push([obj.urunad, obj.stok]);
+                    });
+
+                    data.addRows(dataArray);
+
+                    var columnChartOptions = {
+                        title: "Ürün - Stok Grafiği",
+                        width: 1000,
+                        height: 500,
+                        bar: { groupWidth: "30%" },
+                        legend: { position: "top" }
+                    };
+
+                    var columnChart = new google.visualization.ColumnChart(document.getElementById('columnchart_div'));
+                    columnChart.draw(data, columnChartOptions);
+                },
+                error: function () {
+                    alert("Veriler yüklenirken bir hata oluştu. Lütfen Controller'ı kontrol edin.");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <hr />
+    <div id="columnchart_div" style="margin-left: 50px;">
+    </div>
+</body>
+</html>
