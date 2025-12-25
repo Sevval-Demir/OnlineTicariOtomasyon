@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -76,6 +77,23 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.mesajlars.Add(m);
             c.SaveChanges();
             return View();
+        }
+        public ActionResult KargoTakip(string p)
+        {
+            var k = from x in c.KargoDetays select x;
+            k=k.Where(y=>y.TakipKodu.Contains(p));
+            return View(k.ToList());
+        }
+        public ActionResult CariKargoTakip(string id)
+        {
+            var degerler = c.kargoTakips.Where(x => x.TakipKodu == id).ToList();
+            return View(degerler);
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index","Login");
         }
     }
 }
