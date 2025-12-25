@@ -1,11 +1,13 @@
-﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
-@model List<mesajlar>
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.mesajlar
 @{
-    ViewBag.Title = "MesajDetay";
+
+    ViewBag.Title = "YeniMesaj";
+
     Layout = "~/Views/Shared/_CariLayout.cshtml";
+
 }
 
-<h2>MesajDetay</h2>
+
 
 <!DOCTYPE html>
 
@@ -17,7 +19,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>AdminLTE 3 | Read Mail</title>
+    <title>AdminLTE 3 | Compose Message</title>
 
     <!-- Tell the browser to be responsive to screen width -->
 
@@ -35,15 +37,22 @@
 
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
 
+    <!-- summernote -->
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+
     <!-- Google Font: Source Sans Pro -->
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="hold-transition sidebar-mini">
 
-    <!-- Content Wrapper. Contains page content -->
+
+
+
+
     <!-- Content Header (Page header) -->
 
     <section class="content-header">
@@ -54,9 +63,11 @@
 
                 <div class="col-sm-6">
 
-                    <h1>Mesaj Detayları</h1>
+                    <h1>Yeni Mesaj Oluştur</h1>
 
                 </div>
+
+
 
             </div>
 
@@ -71,9 +82,10 @@
         <div class="container-fluid">
 
             <div class="row">
+
                 <div class="col-md-3">
 
-                    <a href="compose.html" class="btn btn-primary btn-block mb-3">Yeni Mesaj Oluştur</a>
+                    <a href="/CariPanel/GelenMesajlar/" class="btn btn-primary btn-block mb-3">Gelen Kutusu</a>
 
                     <div class="card">
 
@@ -113,8 +125,8 @@
 
                                     <a href="/CariPanel/GidenMesajlar/" class="nav-link">
 
-                                        <i class="fas fa-danger"></i> Gönderdiğim Mesajlar
-                                        <span class="badge bg-primary float-right">@ViewBag.d2</span>
+                                        <i class="far fa-envelope"></i> Gönderilen Mesajlar
+                                        <span class="badge bg-danger float-right">@ViewBag.d2</span>
                                     </a>
 
                                 </li>
@@ -124,8 +136,7 @@
                                     <a href="#" class="nav-link">
 
                                         <i class="far fa-file-alt"></i> Taslaklar
-                                        <span class="badge bg-fuchsia float-right">12</span>
-
+                                        <span class="badge bg-fuchsia float-right">0</span>
                                     </a>
 
                                 </li>
@@ -136,7 +147,7 @@
 
                                         <i class="fas fa-filter"></i> Gereksizler
 
-                                        <span class="badge bg-warning float-right">65</span>
+                                        <span class="badge bg-warning float-right">2</span>
 
                                     </a>
 
@@ -147,8 +158,7 @@
                                     <a href="#" class="nav-link">
 
                                         <i class="far fa-trash-alt"></i> Çöp Kutusu
-                                        <span class="badge bg-gradient-cyan float-right">12</span>
-
+                                        <span class="badge bg-gradient-olive float-right">2</span>
                                     </a>
 
                                 </li>
@@ -213,7 +223,7 @@
 
                                         <i class="far fa-circle text-primary"></i>
 
-                                        Sosyal Medya Mesajları
+                                        Sosyal
 
                                     </a>
 
@@ -226,14 +236,11 @@
                         <!-- /.card-body -->
 
                     </div>
-
                     <!-- /.card -->
 
                 </div>
 
                 <!-- /.col -->
-                @foreach(var x in Model)
-            {
 
                 <div class="col-md-9">
 
@@ -241,108 +248,49 @@
 
                         <div class="card-header">
 
-                            <h3 class="card-title">Mesajı Oku</h3>
-
-                            <div class="card-tools">
-
-                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
-
-                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
-
-                            </div>
+                            <h3 class="card-title">Mesaj Yaz</h3>
 
                         </div>
 
                         <!-- /.card-header -->
+                        <form class="form-group" method="post">
+                            <div class="card-body">
 
-                        <div class="card-body p-0">
+                                <div class="form-group">
 
-                            <div class="mailbox-read-info">
-
-                                <h5>@x.Konu</h5>
-
-                                <h6>
-
-                                    Gönderen: @x.Gonderici
-
-                                    <span class="mailbox-read-time float-right">@x.Tarih/span>
-
-                                </h6>
-
-                            </div>
-
-                            <!-- /.mailbox-read-info -->
-
-                            <div class="mailbox-controls with-border text-center">
-
-                                <div class="btn-group">
-
-                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
-
-                                        <i class="far fa-trash-alt"></i>
-
-                                    </button>
-
-                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
-
-                                        <i class="fas fa-reply"></i>
-
-                                    </button>
-
-                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
-
-                                        <i class="fas fa-share"></i>
-
-                                    </button>
+                                    <input class="form-control" name="Alici" placeholder="Kime:">
 
                                 </div>
 
-                                <!-- /.btn-group -->
+                                <div class="form-group">
 
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+                                    <input class="form-control" name="Konu" placeholder="Konu:">
 
-                                    <i class="fas fa-print"></i>
+                                </div>
 
-                                </button>
+                                <div class="form-group">
 
-                            </div>
+                                    <textarea id="compose-textarea" name="icerik" class="form-control" style="height: 300px"></textarea>
 
-                            <!-- /.mailbox-controls -->
+                                </div>
 
-                            <div class="mailbox-read-message">
-
-                                <p>Merhaba,</p>
-
-                                <p>
-                                    @x.Icerik
-                                </p>
-   
-
-                                <p>Thanks,<br>Jane</p>
+                                <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
 
                             </div>
-
-                            <!-- /.mailbox-read-message -->
-
-                        </div>
-
+                        </form>
                         <!-- /.card-body -->
-
-                        <!-- /.card-footer -->
 
                         <div class="card-footer">
 
                             <div class="float-right">
 
-                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Reply</button>
+                                <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Taslak</button>
 
-                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Forward</button>
+                                <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
 
                             </div>
 
-                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</button>
-
-                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
+                            <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> Vazgeç</button>
 
                         </div>
 
@@ -355,30 +303,16 @@
                 </div>
 
                 <!-- /.col -->
-                }
 
             </div>
 
             <!-- /.row -->
 
-        </div>
+        </div><!-- /.container-fluid -->
 
     </section>
 
     <!-- /.content -->
-    <!-- /.content-wrapper -->
-
-    <!-- Control Sidebar -->
-
-    <aside class="control-sidebar control-sidebar-dark">
-
-        <!-- Control sidebar content goes here -->
-
-    </aside>
-
-    <!-- /.control-sidebar -->
-    </div>
-
     <!-- ./wrapper -->
     <!-- jQuery -->
 
@@ -386,7 +320,7 @@
 
     <!-- Bootstrap 4 -->
 
-    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- AdminLTE App -->
 
@@ -396,14 +330,21 @@
 
     <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 
+    <!-- Summernote -->
+
+    <script src="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+
+    <!-- Page Script -->
+
+    <script>
+        $(function () {
+
+            //Add text editor
+
+            $('#compose-textarea').summernote()
+
+        })</script>
+
 </body>
 
 </html>
-
-
-
-
-
-
-
-
