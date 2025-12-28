@@ -10,6 +10,7 @@ using Context = MvcOnlineTicariOtomasyon.Models.Sınıflar.Context;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
