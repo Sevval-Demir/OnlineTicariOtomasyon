@@ -7,18 +7,18 @@ namespace MvcOnlineTicariOtomasyon.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class denemekargo1 : IMigrationMetadata
+    public sealed partial class InitialClean : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(denemekargo1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialClean));
         
         string IMigrationMetadata.Id
         {
-            get { return "202512131318334_denemekargo1"; }
+            get { return "202512311801469_InitialClean"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

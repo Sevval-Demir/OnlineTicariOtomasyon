@@ -33,6 +33,12 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public decimal ToplamTutar { get; set; }
         public ICollection<FaturaKalem> FaturaKalems { get; set; }
         public int CariID { get; set; }
+        [ForeignKey("CariID")]
+        public virtual Cariler Cariler { get; set; }
         public int PersonelID { get; set; }
+
+        [ForeignKey("PersonelID")]
+        public virtual Personel Personel { get; set; }
+
     }
 }

@@ -19,5 +19,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(2000)]
         public string urunbilgi { get; set; }
         public int UrunID { get; set; }
+        [ForeignKey("UrunID")]
+        public virtual Urun Urun { get; set; }
     }
 }

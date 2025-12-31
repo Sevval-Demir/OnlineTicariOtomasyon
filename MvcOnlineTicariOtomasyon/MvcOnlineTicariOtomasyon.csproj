@@ -160,9 +160,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202512131318334_denemekargo1.cs" />
-    <Compile Include="Migrations\202512131318334_denemekargo1.Designer.cs">
-      <DependentUpon>202512131318334_denemekargo1.cs</DependentUpon>
+    <Compile Include="Migrations\202512311801469_InitialClean.cs" />
+    <Compile Include="Migrations\202512311801469_InitialClean.Designer.cs">
+      <DependentUpon>202512311801469_InitialClean.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
@@ -2991,8 +2991,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202512131318334_denemekargo1.resx">
-      <DependentUpon>202512131318334_denemekargo1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202512311801469_InitialClean.resx">
+      <DependentUpon>202512311801469_InitialClean.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

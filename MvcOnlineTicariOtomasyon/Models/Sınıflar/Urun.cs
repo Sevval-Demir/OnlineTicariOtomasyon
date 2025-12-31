@@ -29,7 +29,5 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public virtual Kategori Kategori { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
         public ICollection<Detay> Detays {  get; set; }
-
-        public ICollection<Urun> Uruns { get; set; }
     }
 }
