@@ -57,7 +57,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AdminLOgin(Admin p)
+        public ActionResult AdminLogin(Admin p)
         {
             var bilgiler=c.Admins.FirstOrDefault(x=>x.KullaniciAd ==p.KullaniciAd && x.Sifre==p.Sifre);
             if(bilgiler!=null)
