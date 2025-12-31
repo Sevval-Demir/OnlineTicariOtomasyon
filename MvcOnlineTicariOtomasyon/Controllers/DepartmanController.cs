@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using MvcOnlineTicariOtomasyon.Models.Sınıflar;
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "A")]
     public class DepartmanController : Controller
     {
         // GET: Departman

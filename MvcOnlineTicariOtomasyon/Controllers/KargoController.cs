@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize(Roles = "A,B")]
     public class KargoController : Controller
     {
         // GET: Kargo

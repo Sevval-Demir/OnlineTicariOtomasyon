@@ -7,6 +7,7 @@ using System.Data.Entity;
 using MvcOnlineTicariOtomasyon.Models.Sınıflar;
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize(Roles = "A")]
     public class FaturaController : Controller
     {
         // GET: Fatura

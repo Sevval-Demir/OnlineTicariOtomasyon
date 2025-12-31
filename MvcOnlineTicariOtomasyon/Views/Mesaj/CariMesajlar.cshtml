@@ -1,0 +1,30 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<mesajlar>
+@{
+    ViewBag.Title = "CariMesajlar";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Gelen Mesajlar</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Gönderen</th>
+        <th>Alıcı</th>
+        <th>Konu</th>
+        <th>Tarih</th>
+        <th>Mesaj</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Gonderici</td>
+            <td>@x.Alici</td>
+            <td>@x.Konu</td>
+            <td>@x.Tarih.ToShortDateString()</td>
+            <td>@x.Icerik</td>
+        </tr>
+    }
+</table>

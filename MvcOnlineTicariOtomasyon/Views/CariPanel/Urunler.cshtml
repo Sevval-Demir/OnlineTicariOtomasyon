@@ -1,0 +1,30 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<Urun>
+
+@{
+    ViewBag.Title = "Ürünler";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<h2>Ürünler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün</th>
+        <th>Fiyat</th>
+        <th>İşlem</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.UrunAd</td>
+            <td>@x.SatisFiyat ₺</td>
+            <td>
+                <a href="/CariPanel/SatinAl/@x.UrunID" class="btn btn-success">
+                    Satın Al
+                </a>
+            </td>
+        </tr>
+    }
+</table>

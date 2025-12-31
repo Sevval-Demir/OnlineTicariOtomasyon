@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MvcOnlineTicariOtomasyon.Models.Sınıflar;
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize(Roles = "A")]
     public class GaleriController : Controller
     {
         // GET: Galeri

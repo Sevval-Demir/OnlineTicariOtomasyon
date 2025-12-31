@@ -2946,11 +2946,12 @@
     <Content Include="Views\Error\PageError.cshtml" />
     <Content Include="Views\Kategori\Deneme.cshtml" />
     <Content Include="Views\Fatura\Dinamik.cshtml" />
+    <Content Include="Views\Mesaj\CariMesajlar.cshtml" />
+    <Content Include="Views\CariPanel\Urunler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Image\" />
-    <Folder Include="Views\Mesaj\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

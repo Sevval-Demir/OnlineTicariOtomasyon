@@ -40,8 +40,14 @@ namespace MvcOnlineTicariOtomasyon.Roles
         public override string[] GetRolesForUser(string username)
         {
             Context c = new Context();
-            var k=c.Admins.FirstOrDefault(x => x.KullaniciAd == username);
-            return new string[] { k.Yetki };
+
+            var admin = c.Admins.FirstOrDefault(x => x.KullaniciAd == username);
+
+            if (admin == null)
+                return new string[] { };
+
+            return new string[] { admin.Yetki };
+
         }
 
         public override string[] GetUsersInRole(string roleName)
