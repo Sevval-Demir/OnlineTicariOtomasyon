@@ -16,5 +16,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public string Aciklama { get; set; }
         public DateTime Tarih { get; set; }
         public decimal Tutar { get; set; }
+        public int PersonelID { get; set; }
     }
 }

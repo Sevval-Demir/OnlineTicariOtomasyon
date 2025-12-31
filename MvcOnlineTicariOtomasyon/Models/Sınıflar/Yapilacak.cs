@@ -16,5 +16,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public string Baslik { get; set; }
         [Column(TypeName = "bit")]
         public bool Durum { get; set; }
+        public int PersonelID { get; set; }
     }
 }

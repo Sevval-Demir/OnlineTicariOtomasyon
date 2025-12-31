@@ -18,5 +18,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Column(TypeName = "Varchar")]
         [StringLength(2000)]
         public string urunbilgi { get; set; }
+        public int UrunID { get; set; }
     }
 }

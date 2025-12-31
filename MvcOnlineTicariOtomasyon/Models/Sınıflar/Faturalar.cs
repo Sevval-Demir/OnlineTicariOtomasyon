@@ -32,5 +32,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public string TeslimAlan { get; set; }
         public decimal ToplamTutar { get; set; }
         public ICollection<FaturaKalem> FaturaKalems { get; set; }
+        public int CariID { get; set; }
+        public int PersonelID { get; set; }
     }
 }
