@@ -96,6 +96,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                 fk.Faturaid=x.Faturaid;
                 fk.Miktar=x.Miktar;
                 fk.Tutar=x.Tutar;
+                fk.UrunID=x.UrunID;
                 c.FaturaKalems.Add(fk);
             }
             return Json("İşlem Başarılı", JsonRequestBehavior.AllowGet);

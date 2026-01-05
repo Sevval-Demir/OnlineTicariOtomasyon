@@ -2212,6 +2212,16 @@
     <Content Include="Images\man1.jpg" />
     <Content Include="Images\man2.jpg" />
     <Content Include="Images\man3.jpg" />
+    <Content Include="Images\Personel\brucewayne.jpg" />
+    <Content Include="Images\Personel\clarkkent.jpg" />
+    <Content Include="Images\Personel\frodobaggins.jpg" />
+    <Content Include="Images\Personel\gandalfgrey.jpg" />
+    <Content Include="Images\Personel\harrypotter.jpg" />
+    <Content Include="Images\Personel\jacksparrow.jpg" />
+    <Content Include="Images\Personel\lukeskywalker.jpeg" />
+    <Content Include="Images\Personel\sherlockholmes.jpg" />
+    <Content Include="Images\Personel\tomhardy.jpg" />
+    <Content Include="Images\Personel\tonystark.jpg" />
     <Content Include="Images\siemensbuzdolabi.jpg" />
     <Content Include="Images\tefalblender.jpg" />
     <Content Include="Images\vestelfırın.jpg" />
